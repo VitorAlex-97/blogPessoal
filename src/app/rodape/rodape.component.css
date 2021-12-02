@@ -1,27 +1,24 @@
-ul.social-network {
-    list-style: none;
-    padding: 0;
+footer {
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(30, 31, 30);
+
+    padding: 30px;
+    border-top: 1px solid rgb(61, 61, 61);
 }
 
-ul.social-network li {
-    list-style: none;
-    padding: 5px;
-    display: inline;
+h3 {
+    font-size: 12pt;
+    color: rgba(255, 255, 255, 0.747);
 }
 
-.fa {
-    font-size: 35pt;
-    color: #ffffff;
+footer a {
+    color: rebeccapurple;
+    transition: color 0.5s;
 }
 
-.fa-facebook-square:hover {
-    color: #3b5998;
-}
-
-.fa-linkedin-square:hover {
-    color: #0072b1;
-}
-
-.fa-github-square:hover {
-    color: #0f0e0e;
+footer a:hover {
+    color: rgb(147, 98, 196);
+    text-decoration: none;
 }
