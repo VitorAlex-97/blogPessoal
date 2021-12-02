@@ -5,3 +5,12 @@
 a {
     cursor: pointer;
 }
+
+#sair {
+    color: white;
+    transition: color 0.5s;
+}
+
+#sair:hover {
+    color: rgb(172, 180, 214);
+}

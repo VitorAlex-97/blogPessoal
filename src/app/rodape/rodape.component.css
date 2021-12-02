@@ -10,15 +10,12 @@ footer {
 
 h3 {
     font-size: 12pt;
-    color: rgba(255, 255, 255, 0.747);
 }
 
 footer a {
-    color: rebeccapurple;
     transition: color 0.5s;
 }
 
 footer a:hover {
-    color: rgb(147, 98, 196);
     text-decoration: none;
 }
