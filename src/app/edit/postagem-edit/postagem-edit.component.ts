@@ -15,13 +15,9 @@ export class PostagemEditComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
 
-  tema: Tema = new Tema()
-  
+  tema: Tema = new Tema()  
   listaTemas: Tema[]
-
   idTema: number
-
-
 
   constructor(
     private router: Router,
