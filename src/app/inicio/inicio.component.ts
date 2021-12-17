@@ -29,6 +29,9 @@ export class InicioComponent implements OnInit {
   key = 'data'
   reverse = true
 
+  tituloPost: string
+  temaPost: string
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -64,6 +67,26 @@ export class InicioComponent implements OnInit {
     this.auth.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     }) 
+  }
+
+  findByTemaPostagem() {
+    if(this.temaPost == ''){
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.temaPost).subscribe((resp: Tema[]) => {
+        this.listaTemas = resp
+      })
+    }
+  }
+
+  findByTituloPostagem() {
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
   }
 
   getAllTemas() {
