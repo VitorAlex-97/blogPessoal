@@ -9,6 +9,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'entrar', pathMatch:'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
 
-  {path: 'user-edit/:id', component: UserEditComponent}
+  {path: 'user-edit/:id', component: UserEditComponent},
+  {path: 'user-page/:id', component: UserPageComponent}
 
 ];
 

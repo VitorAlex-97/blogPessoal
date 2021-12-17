@@ -14,3 +14,7 @@ a {
 #sair:hover {
     color: rgb(172, 180, 214);
 }
+
+.border-b {
+    border-bottom: 1px solid rgb(59, 59, 59) ;
+}

@@ -1,0 +1,56 @@
+<div class="container" style="min-height:'100vh;'">
+    <div class="row">
+        
+    </div>
+    <div class="row d-flex justify-content-center mt-3 bg-white border-b">
+        <div class="col-md-12 d-flex justify-content-star mb-2">
+            <img 
+                src="{{user.foto}}" 
+                alt="Imagem do usuário" 
+                width="150px" 
+                height="150px" 
+                class="rounded-circle mr-2"
+            >
+            <div class="flex-colunm align-content-center">
+                <h6 class="card-subtitle mt-2 fs-3rem">{{user.nome}}</h6>
+                <h6 class="mt-2"> <span class="font-style-italic f-style">email: </span>{{user.usuario}}</h6>
+                <h6 class="mt-2"> <span class="font-style-italic f-style">tipo de usuário: </span>{{user.tipo}}</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-columns d-flex flex-column flex-wrap justify-content-center align-content-center">
+        <div class="card mt-3 shadow border-0" style="width: 500px;" *ngFor='let item of user.minhasPostagens'>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 d-flex align-content-center">
+                        <img src="{{user.foto}}" 
+                            alt="Imagem do usuário" 
+                            width="50px" 
+                            height="50px" 
+                            class="rounded-circle mr-2"
+                        >
+                        <h6 class="card-subtitle my-2 text-muted">{{user.nome}}</h6>
+                    </div>
+                </div>
+                <h5 class="card-title mt-2">{{item.titulo}}</h5>
+                <small class="text-muted">{{item.tema.descricao}}</small>
+                <p class="card-text">{{item.texto}}</p>
+                <p class="card-text"  >
+                    <small>{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small>
+                </p>
+                <div *ngIf='isUserlogin()' class="row">
+                    <div class="col-md-12">
+                        <a [routerLink]="['/postagem-delete', item.id]" class="text-danger mr-3">Apagar</a>
+                        <a [routerLink]="['/postagem-edit', item.id]" class="text-info">Editar</a>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+    </div>
+
+
+</div>
+
+

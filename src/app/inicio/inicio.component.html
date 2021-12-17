@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-    <div class="row bg-dark d-flex align-items-center bd-top">
+    <div class="row bg-dark d-flex align-items-center">
 
         <div class="col-md-6">
 
@@ -52,7 +52,7 @@
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
             
             <div class="card-columns d-flex flex-column flex-wrap justify-content-center align-content-center">
-                <div class="card mt-3" style="width: 500px" *ngFor='let item of listaPostagens'>
+                <div class="card mt-3 shadow border-0" style="width: 500px" *ngFor='let item of listaPostagens | orderBy: key: reverse'>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-content-center">
@@ -62,7 +62,7 @@
                                     height="50px" 
                                     class="rounded-circle mr-2"
                                 >
-                                <h6 class="card-subtitle my-2 text-muted">{{item.criador.nome}}</h6>
+                                <a [routerLink]="['/user-page', item.criador.id]" class="card-subtitle my-2 text-muted">{{item.criador.nome}}</a>
                             </div>
                         </div>
                         <h5 class="card-title mt-2">{{item.titulo}}</h5>
@@ -80,7 +80,7 @@
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
             
             <div class="card-columns d-flex flex-column flex-wrap justify-content-center align-content-center">
-                <div class="card mt-3" style="width: 500px;" *ngFor='let item of user.minhasPostagens'>
+                <div class="card mt-3 shadow border-0" style="width: 500px;" *ngFor='let item of user.minhasPostagens'>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-content-center">
@@ -112,7 +112,7 @@
         <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
             
             <div class="card-columns d-flex flex-column flex-wrap justify-content-center align-content-center" *ngFor='let tema of listaTemas'>
-                <div class="card mt-3" style="width: 500px;" *ngFor='let item of tema.postagem'>
+                <div class="card mt-3 shadow border-0" style="width: 500px;" *ngFor='let item of tema.postagem'>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-content-center">
