@@ -15,6 +15,8 @@ export class UserPageComponent implements OnInit {
   user: User = new User()
   idUser: number
 
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,

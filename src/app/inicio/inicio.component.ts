@@ -32,6 +32,16 @@ export class InicioComponent implements OnInit {
   tituloPost: string
   temaPost: string
 
+  selecionaTipo: string = 'titulo'
+
+  pesquisa(){
+    let ok: boolean = false
+    if (this.selecionaTipo == 'titulo'){
+      ok = true
+    }
+    return ok
+  }
+
   constructor(
     private router: Router,
     private auth: AuthService,
@@ -119,5 +129,16 @@ export class InicioComponent implements OnInit {
     })
 
   }
+
+  pesquisaPoTipo() {
+    console.log(this.selecionaTipo)
+    if(this.selecionaTipo == 'tema') {
+      this.findByTemaPostagem()
+    } else {
+      this.findByTituloPostagem()
+    }
+
+  }
+
 
 }

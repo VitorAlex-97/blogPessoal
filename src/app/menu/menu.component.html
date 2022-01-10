@@ -7,26 +7,25 @@
       <ul class="navbar-nav mr-auto d-flex align-items-center">
 
         <li class="nav-item active">
-          <img src="{{foto}}" 
-          alt="Imagem do usuário" 
-          width="50px" 
-          height="50px" 
-          class="img-fluid rounded-circle">
+          <a [routerLink]="['/user-page', id]">
+            <img src="{{foto}}" 
+            alt="Imagem do usuário" 
+            width="50px" 
+            height="50px" 
+            class="img-fluid rounded-circle">
+          </a>
         </li>
-        <li class="nav-item pl-3">
-          <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p>
-        </li>
-
-        <li class="nav-item pl-3">
-            <a [routerLink]="['/user-edit', id]">
-                <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
-            </a>
+        <li class="nav-item pl-3 d-flex">
+          <p class="m-0 font-weight-bold text-white fs-16 mr-3">Olá, {{nome}}</p>
+          <a [routerLink]="['/user-edit', id]">
+            <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o hover" aria-hidden="true"></i></p>
+          </a>
         </li>          
       </ul>
 
       <ul class="navbar-nav ml-auto d-flex align-items-center">
           <li>
-              <a class="m-0 font-weight-bold fs-16 text-decoration-none" id="sair" (click)='sair()'>
+              <a class="m-0 font-weight-bold fs-16 text-decoration-none hover" (click)='sair()'>
                   Sair
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
               </a>

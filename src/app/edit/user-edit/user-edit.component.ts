@@ -15,6 +15,9 @@ export class UserEditComponent implements OnInit {
   idUser: number
   confirmarSenha: string
 
+  key = 'data'
+  reverse = true
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
